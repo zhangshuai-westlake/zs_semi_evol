@@ -1,6 +1,6 @@
 # SemiEvol
 
-This repository contains the official implementation of the paper: **SemiEvol: Semi-supervised Fine-tuning for LLM Adaptation**.
+This repository contains the official implementation of the paper: [**SemiEvol: Semi-supervised Fine-tuning for LLM Adaptation**](https://arxiv.org/abs/2410.14745).
 
 ## TLDR
 
@@ -10,7 +10,7 @@ We have developed **SemiEvol**, which leverages labeled data to enhance inferenc
 
 If our work has been helpful to you, please consider citing it. Your citation serves as encouragement for our research.
 ```BibTex
-@misc{luo2024semievolsemisupervisedfinetuningllm,
+@misc{luo2024semievol,
     title={SemiEvol: Semi-supervised Fine-tuning for LLM Adaptation}, 
     author={Junyu Luo and Xiao Luo and Xiusi Chen and Zhiping Xiao and Wei Ju and Ming Zhang},
     year={2024},
