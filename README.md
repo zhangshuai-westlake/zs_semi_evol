@@ -4,12 +4,24 @@ This repository contains the official implementation of the paper: **SemiEvol: S
 
 ## TLDR
 
-We have developed the SemiEvol process, which leverages labeled data to enhance inference on unlabeled data, thereby improving the reasoning capabilities of Large Language Models (LLMs). This process is characterized as a bi-level knowledge propagation and selection mechanism.
+We have developed **SemiEvol**, which leverages labeled data to enhance inference on unlabeled data, thereby improving the reasoning capabilities of Large Language Models (LLMs). This process is characterized as a bi-level knowledge propagation and selection mechanism.
 
 ## BibTex
 
 If our work has been helpful to you, please consider citing it. Your citation serves as encouragement for our research.
+```BibTex
+@misc{luo2024semievolsemisupervisedfinetuningllm,
+    title={SemiEvol: Semi-supervised Fine-tuning for LLM Adaptation}, 
+    author={Junyu Luo and Xiao Luo and Xiusi Chen and Zhiping Xiao and Wei Ju and Ming Zhang},
+    year={2024},
+    eprint={2410.14745},
+    archivePrefix={arXiv},
+    primaryClass={cs.CL},
+    url={https://arxiv.org/abs/2410.14745}, 
+}
+```
 
+You can also find the paper at [HuggingFace](https://huggingface.co/papers/2410.14745). 
 
 ## Framework
 
