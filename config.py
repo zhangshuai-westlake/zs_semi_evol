@@ -2,7 +2,7 @@ from common import *
 
 MODELS_CONFIG = {
     "llama3.1": {
-        "name": "/root/private_data/work/llama3.1",
+        "name": "meta-llama/Meta-Llama-3.1-8B-Instruct",
         "url": "http://localhost:6006/v1",
         "method": "loop"
     },
