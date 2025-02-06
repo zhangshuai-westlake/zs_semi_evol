@@ -59,6 +59,8 @@ import json
 
 
 
+# os.environ['OPENAI_API_KEY'] = "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"
+
 from vllm import LLM
 
 model_path = "/storage/home/westlakeLab/zhangshuai/models/TinyLlama/TinyLlama_v1.1"
