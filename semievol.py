@@ -4,7 +4,7 @@ import os
 import sys
 sys.path.append('..')
 import openai
-os.environ['OPENAI_API_KEY'] = "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"
+# os.environ['OPENAI_API_KEY'] = "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"
 openai.api_key = os.environ['OPENAI_API_KEY']
 from langchain_community.vectorstores import FAISS
 from langchain_openai import OpenAIEmbeddings
