@@ -6,10 +6,16 @@ import time
 from datetime import datetime
 
 def batch_query_openai_chat_model(instances, config, save_dir=None):
-    evaluator = BatchRequest(config)
-    evaluator.creat_batch_task(instances)
-    evaluator.check_until_completed()
-    res_list = evaluator.export_batch_result(output_path=save_dir)
+    if os.path.exists(save_dir):
+        res_list = []
+        with open(save_dir, 'r') as file:
+            for line in file:
+                res_list.append(json.loads(line))
+    else:
+        evaluator = BatchRequest(config)
+        evaluator.creat_batch_task(instances)
+        evaluator.check_until_completed()
+        res_list = evaluator.export_batch_result(output_path=save_dir)
     return res_list
 
 def get_logprob_array(probs):

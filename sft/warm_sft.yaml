@@ -1,0 +1,69 @@
+### model
+#model_name_or_path: "/storage/home/westlakeLab/zhangshuai/models/Meta-Llama-3.1-8B-Instruct"
+#model_name_or_path: "/storage/home/westlakeLab/zhangshuai/models/TinyLlama/TinyLlama_v1.1"
+#model_name_or_path: "/storage/home/westlakeLab/zhangshuai/models/TinyLlama/TinyLlama-1.1B-Chat-v1.0"
+#model_name_or_path: "/storage/home/westlakeLab/zhangshuai/models/TinyLlama/TinyLlama-1.1B-Chat-v1.0"
+#model_name_or_path: "/storage/home/westlakeLab/zhangshuai/models/microsoft/Phi-3-mini-4k-instruct"
+#model_name_or_path: "/storage/home/westlakeLab/zhangshuai/models/google/gemma-2-2b-it"
+model_name_or_path: "/storage/home/westlakeLab/zhangshuai/models/google/gemma-2-2b"
+trust_remote_code: true
+
+### method
+stage: sft
+do_train: true
+finetuning_type: lora
+lora_target: all
+lora_rank: 8
+lora_alpha: 16
+lora_dropout: 0.1
+
+### dataset
+dataset: "labeled_mmlu"
+#dataset: "labeled_USMLE"
+#dataset: "labeled_mmlu_pro"
+
+### template
+## llama3.1
+#template: llama3
+## tinyllama1.1
+#template: alpaca
+## phi3mini4k
+#template: phi
+## gemma2_2bit
+template: gemma
+
+
+cutoff_len: 2048
+overwrite_cache: true
+preprocessing_num_workers: 16
+
+### output
+## llama3.1
+#output_dir: "output/warm_llama3.1_mmlu"
+#output_dir: "output/warm_llama3.1_USMLE"
+#output_dir: "output/warm_llama3.1_mmlu_pro"
+## tinyllama1.1
+#output_dir: "output/warm_tinyllama1.1base_mmlu"
+#output_dir: "output/warm_tinyllama1.1_mmlu"
+## phi3mini4k
+#output_dir: "output/warm_phi3mini4k_mmlu"
+## gemma2_2bit
+#output_dir: "output/warm_gemma2_2bit_mmlu"
+output_dir: "output/warm_gemma2_2b_mmlu"
+
+#logging_steps: 10
+logging_steps: 1
+save_steps: 500
+plot_loss: true
+overwrite_output_dir: true
+
+### train
+per_device_train_batch_size: 1
+gradient_accumulation_steps: 8
+learning_rate: 1.0e-4
+num_train_epochs: 2.0
+#num_train_epochs: 1.0
+lr_scheduler_type: cosine
+warmup_ratio: 0.1
+bf16: true
+ddp_timeout: 180000000

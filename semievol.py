@@ -4,6 +4,7 @@ import os
 import sys
 sys.path.append('..')
 import openai
+os.environ['OPENAI_API_KEY'] = "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"
 openai.api_key = os.environ['OPENAI_API_KEY']
 from langchain_community.vectorstores import FAISS
 from langchain_openai import OpenAIEmbeddings
@@ -37,31 +38,47 @@ def calculate_entropy(probs):
 
 GLOBAL_RETRIEVAL_CACHE = ThreadSafeDict()
 
-def format_few_shot(data):
+def format_few_shot(data, topk=None):
     ref_str = nr.fewshot(data)
+    if topk is not None:
+        elems = ref_str.split("Example")
+        assert len(elems) == 4
+        ref_str = "\n".join(elems[:1+topk])
     system_prompt = FUNCTION_UTILS[question_type]['few_shot_prompt'].format(reference=ref_str)
     user_prompt = FUNCTION_UTILS[question_type]['format_fn'](data)
     return [{"role": "system", "content": system_prompt}, {"role": "user", "content": user_prompt}]
 
 class NearestReference:
-    def __init__(self, k=4) -> None:
+    def __init__(self, k=4, task=None) -> None:
         self.vectorstore = None
         self.selector = None
         self.k = k
+        self.task = task
+        self.embed_path = f'tmp/{task}_labeled'
+        search_path = f"{self.embed_path}/search_idx_k={k}.json"
+        self.search_path = search_path
+        self.search_map = {}
+        if os.path.exists(search_path):
+            self.search_map = {item["query"]: item["ref_str"] for item in json.load(open(search_path))}
 
     def read_data(self, data_path):
         df = pd.read_csv(data_path)
         examples = [row.to_dict() for _, row in df.iterrows()]
         return examples
 
-    def embed_data_path(self, data_path, embed_path=None):
+    # def embed_data_path(self, data_path, embed_path=None):
+    #     data = self.read_data(data_path)
+    #     return self.embed_data(data, embed_path)
+    def embed_data_path(self, data_path):
         data = self.read_data(data_path)
-        return self.embed_data(data, embed_path)
+        return self.embed_data(data)
 
-    def embed_data(self, data, embed_path=None):
-        embed_path = embed_path or 'tmp/embed'
-        if os.path.exists(embed_path):
-            self.vectorstore = FAISS.load_local(embed_path, embed)
+    def embed_data(self, data):
+        # def embed_data(self, data, embed_path=None):
+        # embed_path = embed_path or 'tmp/embed'
+        embed_path = self.embed_path
+        if os.path.exists(embed_path) and os.path.exists(f'{embed_path}/index.faiss'):
+            self.vectorstore = FAISS.load_local(embed_path, embed, allow_dangerous_deserialization=True)
             # , allow_dangerous_deserialization=True)
         else:
             os.makedirs(embed_path, exist_ok=True)
@@ -74,8 +91,8 @@ class NearestReference:
         )
         return self.vectorstore
 
-    @retry
-    @func_set_timeout(2)
+    # @retry
+    # @func_set_timeout(2)
     def retrieve(self, question):
         cached_result = GLOBAL_RETRIEVAL_CACHE.get(question)
         if cached_result is not None:
@@ -85,16 +102,34 @@ class NearestReference:
         return res
 
     def fewshot(self, question):
+        if question['question'] in self.search_map:
+            return self.search_map[question['question']]
         ref = self.retrieve(question['question'])
         ref_str = ''
         for i, r in enumerate(ref):
             ref_str += f"Example {i+1}:\n{format_question_and_answer(r)}\n\n"
+        self.search_map[question['question']] = ref_str
         return ref_str
 
+    def save_search_map(self):
+        if not os.path.exists(self.search_path):
+            items = [{'query': k, 'ref_str': v} for k, v in self.search_map.items()]
+            with open(self.search_path, 'w') as f:
+                json.dump(items, f, indent=4)
+
 if __name__ == '__main__':
-    
-    task = 'mmlu'
-    model='gpt-4o-mini'
+
+    task = sys.argv[1]
+    model = sys.argv[2]
+    if len(sys.argv) < 4:
+        topk = None
+    else:
+        topk = int(sys.argv[3])
+    print(f"Task: {task}, Model: {model}, Topk: {topk}")
+
+    # task = 'mmlu'
+    # model='llama3.1'
+    # model='gpt-4o-mini'
 
     assert task in TASK_CONFIG and model in MODELS_CONFIG
 
@@ -110,26 +145,31 @@ if __name__ == '__main__':
         'config': {
             "model": model_config['name'],
             "temperature": 1,
-            "max_tokens": 1000,
+            "max_tokens": 100,
             "logprobs": True
         }
     }
 
     eval_config = EVAL_UTILS[question_type]
-    eval_config['format_fn'] = format_few_shot
+
+    # eval_config['format_fn'] = format_few_shot
+    eval_config['format_fn'] = lambda x: format_few_shot(x, topk=topk)
 
     save_path = f'data/{task}/pseudo_{model}.csv'
     embed = OpenAIEmbeddings(model="text-embedding-3-small")
 
-    nr = NearestReference(k=3)
-    nr.embed_data_path(label_path, f'tmp/{task}_labeled')
-    
+    nr = NearestReference(k=3, task=task)
+    # nr.embed_data_path(label_path, f'tmp/{task}_labeled')
+    nr.embed_data_path(label_path)
+
     unlabel_df = pd.read_csv(unlabel_path)
     unlabel_data = [row.to_dict() for _, row in unlabel_df.iterrows()]
 
-    # num_examples = len(unlabel_data)
+    # num_examples = 10
     # unlabel_data = random.Random(0).sample(unlabel_data, num_examples)
-    
+
+    num_examples = len(unlabel_data)
+
     save_data = copy.deepcopy(unlabel_data)
 
     inference_times = 4
@@ -139,9 +179,11 @@ if __name__ == '__main__':
     for i in range(inference_times):
         print(f"Start inference {i}")
         inference_data = copy.deepcopy(unlabel_data)
-        eval = Eval(examples=inference_data, **infer_config)
+        eval = Eval(examples=inference_data, **infer_config, suffix=str(i))
         inference_eval.append(eval)
         few_shot_acc = eval.eval(**eval_config)
+        nr.save_search_map()
+        # exit()
         res_list = eval.get_results()
         inference_list.append(res_list)
         entropy_list = [calculate_entropy(infer['logprobs']) for infer in res_list]
@@ -169,7 +211,7 @@ if __name__ == '__main__':
             save_data[idx]['entropy'] = entropy
 
             conf_samples.append(save_data[idx])
-    
+
     print(f'Consistent Rate: {len(conf_samples) / num_examples}')
     print(f'Drop Rate: {(len(unlabel_data) - len(unconsis_indexs) - len(conf_samples)) / num_examples}')
     print(f'Unconsistent Rate: {len(unconsis_indexs) / num_examples}')
@@ -181,11 +223,11 @@ if __name__ == '__main__':
         unconsis_examples.append(unlabel_data[idx])
 
     if unconsis_examples:
-        unconsist_eval = Eval(examples=unconsis_examples, **infer_config)
+        unconsist_eval = Eval(examples=unconsis_examples, **infer_config, suffix='unconsist')
         unconsist_acc = unconsist_eval.eval(**eval_config)
         unconsist_res = unconsist_eval.get_results()
         unconf_unconsit_indexs = []
-        
+
         for idx, res in zip(unconsis_indexs, unconsist_res):
             entropy = calculate_entropy(res['logprobs'])
             save_data[idx]['entropy'] = entropy

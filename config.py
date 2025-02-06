@@ -1,13 +1,165 @@
 from common import *
 
 MODELS_CONFIG = {
+    ### base instruction model
     "llama3.1": {
-        "name": "meta-llama/Meta-Llama-3.1-8B-Instruct",
+        # "name": "meta-llama/Meta-Llama-3.1-8B-Instruct",
+        # "name": "/data/users/zhangshuai/work/pretrained_models/Meta-Llama-3.1-8B-Instruct",
+        "name": "/storage/home/westlakeLab/zhangshuai/models/Meta-Llama-3.1-8B-Instruct",
         "url": "http://localhost:6006/v1",
         "method": "loop"
     },
+    "tinyllama1.1": {
+        "name": "/storage/home/westlakeLab/zhangshuai/models/TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+        "url": "http://localhost:6006/v1",
+        "method": "loop"
+    },
+    "phi3mini4k": {
+        "name": "/storage/home/westlakeLab/zhangshuai/models/microsoft/Phi-3-mini-4k-instruct",
+        "url": "http://localhost:6006/v1",
+        "method": "loop"
+    },
+    "gemma2_2bit": {
+        "name": "/storage/home/westlakeLab/zhangshuai/models/google/gemma-2-2b-it",
+        "url": "http://localhost:6006/v1",
+        "method": "loop"
+    },
+
+    ### base model
+    "llama3.1_base": {
+        "name": "/backup/lanzhenzhongLab/public/shuai_share/Llama-3.1-8B",
+        "url": "http://localhost:6006/v1",
+        "method": "loop"
+    },
+    "tinyllama1.1_base": {
+        "name": "/storage/home/westlakeLab/zhangshuai/models/TinyLlama/TinyLlama_v1.1",
+        "url": "http://localhost:6006/v1",
+        "method": "loop"
+    },
+    "gemma2_2b": {
+        "name": "/storage/home/westlakeLab/zhangshuai/models/google/gemma-2-2b",
+        "url": "http://localhost:6006/v1",
+        "method": "loop"
+    },
+
+    ### warm sft model
+    #llama3.1
+    "warm_llama3.1_mmlu": {
+        "name": "./sft/output/merged_warm_llama3.1_mmlu",
+        "url": "http://localhost:6006/v1",
+        "method": "loop"
+    },
+    "warm_llama3.1_USMLE": {
+        "name": "./sft/output/merged_warm_llama3.1_USMLE",
+        "url": "http://localhost:6006/v1",
+        "method": "loop"
+    },
+    "warm_llama3.1_mmlu_pro": {
+        "name": "./sft/output/merged_warm_llama3.1_mmlu_pro",
+        "url": "http://localhost:6006/v1",
+        "method": "loop"
+    },
+    #tinyllama1.1base
+    "warm_tinyllama1.1base_mmlu": {
+        "name": "./sft/output/merged_warm_tinyllama1.1base_mmlu",
+        "url": "http://localhost:6006/v1",
+        "method": "loop"
+    },
+    #phi3mini4k
+    "warm_phi3mini4k_mmlu": {
+        "name": "./sft/output/merged_warm_phi3mini4k_mmlu",
+        "url": "http://localhost:6006/v1",
+        "method": "loop"
+    },
+    #gemma2_2bit
+    "warm_gemma2_2bit_mmlu": {
+        "name": "./sft/output/merged_warm_gemma2_2bit_mmlu",
+        "url": "http://localhost:6006/v1",
+        "method": "loop"
+    },
+    #gemma2_2b
+    "warm_gemma2_2b_mmlu": {
+        "name": "./sft/output/merged_warm_gemma2_2b_mmlu",
+        "url": "http://localhost:6006/v1",
+        "method": "loop"
+    },
+
+    ################ semievol model
+    ###baseline
+    "pseudo_llama3.1_mmlu": {
+        "name": "./sft/output/merged_pseudo_llama3.1_mmlu_filter",
+        "url": "http://localhost:6006/v1",
+        "method": "loop"
+    },
+    "pseudo_llama3.1_USMLE": {
+        "name": "./sft/output/merged_pseudo_llama3.1_USMLE_filter",
+        "url": "http://localhost:6006/v1",
+        "method": "loop"
+    },
+    "pseudo_llama3.1_mmlu_pro": {
+        "name": "./sft/output/merged_pseudo_llama3.1_mmlu_pro_filter",
+        "url": "http://localhost:6006/v1",
+        "method": "loop"
+    },
+    "pseudo_tinyllama1.1base_mmlu": {
+        "name": "./sft/output/merged_pseudo_tinyllama1.1base_mmlu_filter",
+        "url": "http://localhost:6006/v1",
+        "method": "loop"
+    },
+    "pseudo_phi3mini4k_mmlu":{
+        "name": "./sft/output/merged_pseudo_phi3mini4k_mmlu_filter",
+        "url": "http://localhost:6006/v1",
+        "method": "loop"
+    },
+    "pseudo_gemma2_2b_mmlu": {
+        "name": "./sft/output/merged_pseudo_gemma2_2b_mmlu_filter",
+        "url": "http://localhost:6006/v1",
+        "method": "loop"
+    },
+
+    ### test
+    "pseudo_llama3.1_mmlu_pro_test_pseudo": {
+        "name": "./sft/output/merged_pseudo_llama3.1_mmlu_pro_filter_test_pseudo",
+        "url": "http://localhost:6006/v1",
+        "method": "loop"
+    },
+    "pseudo_llama3.1_mmlu_pro_test_all_right": {
+        "name": "./sft/output/merged_pseudo_llama3.1_mmlu_pro_filter_test_all_right",
+        "url": "http://localhost:6006/v1",
+        "method": "loop"
+    },
+    "pseudo_llama3.1_mmlu_pro_test_all_wrong": {
+        "name": "./sft/output/merged_pseudo_llama3.1_mmlu_pro_filter_test_all_wrong",
+        "url": "http://localhost:6006/v1",
+        "method": "loop"
+    },
+    "pseudo_tinyllama1.1base_mmlu_test_for_template": {
+        "name": "./sft/output/merged_pseudo_tinyllama1.1base_mmlu_filter_test_for_template",
+        "url": "http://localhost:6006/v1",
+        "method": "loop"
+    },
+
+    ### threshold_by_filter_proportion
+    "pseudo_llama3.1_mmlu_threshold_by_filter_proportion": {
+        "name": "./sft/output/merged_pseudo_llama3.1_mmlu_filter_threshold_by_filter_proportion",
+        "url": "http://localhost:6006/v1",
+        "method": "loop"
+    },
+    "pseudo_llama3.1_mmlu_pro_threshold_by_filter_proportion": {
+        "name": "./sft/output/merged_pseudo_llama3.1_mmlu_pro_filter_threshold_by_filter_proportion",
+        "url": "http://localhost:6006/v1",
+        "method": "loop"
+    },
+    "pseudo_phi3mini4k_mmlu_threshold_by_filter_proportion": {
+        "name": "./sft/output/merged_pseudo_phi3mini4k_mmlu_filter_threshold_by_filter_proportion",
+        "url": "http://localhost:6006/v1",
+        "method": "loop"
+    },
+
+    ### paper report semievol model
     "llama3.1-mmlu-labeled": {
-        "name": "mmlu_labeled",
+        # "name": "mmlu_labeled",
+        "name": "/data/users/zhangshuai/work/pretrained_models/luojunyu/Llama-3.1-8B-SemiEvol-MMLU",
         "url": "http://localhost:6006/v1",
         "method": "loop"
     },

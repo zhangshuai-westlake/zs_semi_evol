@@ -1,0 +1,83 @@
+### model
+#model_name_or_path: "output/merged_warm_llama3.1_mmlu"
+#model_name_or_path: "output/merged_warm_llama3.1_USMLE"
+#model_name_or_path: "output/merged_warm_llama3.1_mmlu_pro"
+#model_name_or_path: "output/merged_warm_tinyllama1.1base_mmlu"
+#model_name_or_path: "output/merged_warm_phi3mini4k_mmlu"
+model_name_or_path: "output/merged_warm_gemma2_2b_mmlu"
+trust_remote_code: true
+
+### method
+stage: sft
+do_train: true
+finetuning_type: lora
+lora_target: all
+lora_rank: 8
+lora_alpha: 16
+lora_dropout: 0.1
+
+################# dataset
+###### baseline
+#dataset: "pseudo_warm_llama3.1_mmlu_filter"
+#dataset: "pseudo_warm_llama3.1_USMLE_filter"
+#dataset: "pseudo_warm_llama3.1_mmluupro_filter"
+#dataset: "pseudo_warm_tinyllama1.1base_mmlu_filter"
+#dataset: "pseudo_warm_phi3mini4k_mmlu_filter"
+#dataset: "pseudo_warm_gemma_2b_mmlu_filter"
+###### use for test
+#dataset: "pseudo_warm_llama3.1_mmlu_pro_filter_test_pseudo"
+#dataset: "pseudo_warm_llama3.1_mmlu_pro_filter_test_all_right"
+#dataset: "pseudo_warm_llama3.1_mmlu_pro_filter_test_all_wrong"
+###### threshold_by_filter_proportion
+#dataset: "pseudo_warm_llama3.1_mmlu_filter_threshold_by_filter_proportion"
+#dataset: "pseudo_warm_llama3.1_mmlu_pro_filter_threshold_by_filter_proportion"
+#dataset: "pseudo_warm_phi3mini4k_mmlu_filter_threshold_by_filter_proportion"
+dataset: "pseudo_warm_gemma2_2b_mmlu_filter_threshold_by_filter_proportion"
+
+## llama3.1
+#template: llama3
+## tinyllama1.1
+#template: alpaca
+## phi3mini4k
+#template: phi
+## gemma
+template: gemma
+
+cutoff_len: 2048
+overwrite_cache: true
+preprocessing_num_workers: 16
+
+################# output
+###### baseline
+#output_dir: "output/pseudo_llama3.1_mmlu_filter"
+#output_dir: "output/pseudo_llama3.1_USMLE_filter"
+#output_dir: "output/pseudo_llama3.1_mmlu_pro_filter"
+#output_dir: "output/pseudo_tinyllama1.1base_mmlu_filter"
+#output_dir: "output/pseudo_phi3mini4k_mmlu_filter"
+#output_dir: "output/pseudo_gemma2_2b_mmlu_filter"
+###### use for test
+#output_dir: "output/pseudo_llama3.1_mmlu_pro_filter_test_pseudo"
+#output_dir: "output/pseudo_llama3.1_mmlu_pro_filter_test_all_right"
+#output_dir: "output/pseudo_llama3.1_mmlu_pro_filter_test_all_wrong"
+###### threshold_by_filter_proportion
+#output_dir: "output/pseudo_llama3.1_mmlu_filter_threshold_by_filter_proportion"
+#output_dir: "output/pseudo_llama3.1_mmlu_pro_filter_threshold_by_filter_proportion"
+#output_dir: "output/pseudo_phi3mini4k_mmlu_filter_threshold_by_filter_proportion"
+output_dir: "output/pseudo_gemma2_2b_mmlu_filter_threshold_by_filter_proportion"
+logging_steps: 10
+save_steps: 500
+plot_loss: true
+overwrite_output_dir: true
+
+### train
+per_device_train_batch_size: 1
+gradient_accumulation_steps: 8
+learning_rate: 1.0e-4
+#num_train_epochs: 5.0
+#num_train_epochs: 4.0
+#num_train_epochs: 3.0
+num_train_epochs: 2.0
+lr_scheduler_type: cosine
+warmup_ratio: 0.1
+bf16: true
+ddp_timeout: 180000000

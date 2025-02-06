@@ -16,7 +16,7 @@ import datetime
 
 class Eval:
 
-    def __init__(self, type='loop', examples=[], data_path=None, num_examples=None, config=None, task=''):
+    def __init__(self, type='loop', examples=[], data_path=None, num_examples=None, config=None, task='', suffix=""):
         """
         Args:
             type: 'loop' or 'batch'
@@ -53,8 +53,12 @@ class Eval:
 
         self.type = type
         self.results = None
-        timestamp = datetime.datetime.now().strftime("%m%d_%H")
-        self.output_path = f'./save/{task}_{model}_{timestamp}.json'
+        # timestamp = datetime.datetime.now().strftime("%m%d_%H")
+        # self.output_path = f'./save/{task}_{model}_{timestamp}.json'
+        self.output_path = f'./save/{task}_{model}'
+        if suffix:
+            self.output_path += "_" + suffix
+        self.output_path += ".json"
         self.gptreq = None
     
     def multiple_inference(self, instances, extract_fn):
@@ -81,6 +85,7 @@ class Eval:
             response = res_list[i]['response']
             self.examples[i]["Pred"] = response
             self.examples[i]["PredAnswer"] = extract_fn(response)
+            self.examples[i]["logprobs"] = res_list[i]["logprobs"]
     
     def extract_results(self):
         return self.examples
@@ -95,6 +100,7 @@ class Eval:
 
         print(f'Begin Inference ...')
 
+        # return 0
         if self.type == 'loop':
             self.multiple_inference(instances, extract_fn)
         else:
@@ -114,9 +120,17 @@ class Eval:
     
 if __name__ == "__main__":
     global_res_file = 'global_res.txt'
+    task = sys.argv[1]
+    model = sys.argv[2]
+    task_list = [task]
+    model_list = [model]
 
-    task_list = ['mmlu']
-    model_list = ['gpt-4o-mini']
+    # task_list = ['mmlu']
+    # task_list = ['mmlu_pro']
+    # model_list = ['gpt-4o-mini']
+    # model_list = ['llama3.1']
+    # model_list = ['pseudo_llama3.1_mmlu']
+    # model_list = ['llama3.1-mmlu-labeled']
 
     for task in task_list:
         for model in model_list:

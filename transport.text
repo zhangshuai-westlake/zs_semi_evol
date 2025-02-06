@@ -1,0 +1,3 @@
+######## 在cg13上
+cd /storage/home/westlakeLab/zhangshuai/work/semi_instruction_tuning/SemiEvol/sft/data
+scp zhangshuai@172.16.75.141:/data/users/zhangshuai/work/semi_instruction_tuning/SemiEvol/sft/pseudo_llama3.1_mmlu_filter.json .

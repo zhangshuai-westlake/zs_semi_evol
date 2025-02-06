@@ -1,0 +1,41 @@
+### Note: DO NOT use quantized model or quantization_bit when merging lora adapters
+
+### model
+#model_name_or_path: "/storage/home/westlakeLab/zhangshuai/models/Meta-Llama-3.1-8B-Instruct"
+#model_name_or_path: "/storage/home/westlakeLab/zhangshuai/models/TinyLlama/TinyLlama_v1.1"
+#model_name_or_path: "/storage/home/westlakeLab/zhangshuai/models/microsoft/Phi-3-mini-4k-instruct"
+#model_name_or_path: "/storage/home/westlakeLab/zhangshuai/models/google/gemma-2-2b-it"
+model_name_or_path: "/storage/home/westlakeLab/zhangshuai/models/google/gemma-2-2b"
+
+
+#adapter_name_or_path: "output/warm_llama3.1_mmlu"
+#adapter_name_or_path: "output/warm_llama3.1_USMLE"
+#adapter_name_or_path: "output/warm_llama3.1_mmlu_pro"
+#adapter_name_or_path: "output/warm_tinyllama1.1base_mmlu"
+#adapter_name_or_path: "output/warm_phi3mini4k_mmlu"
+#adapter_name_or_path: "output/warm_gemma2_2bit_mmlu"
+adapter_name_or_path: "output/warm_gemma2_2b_mmlu"
+
+
+#template: llama3
+#template: alpaca
+#template: phi
+template: gemma
+
+
+finetuning_type: lora
+trust_remote_code: true
+
+### export
+#export_dir: "output/merged_warm_llama3.1_mmlu"
+#export_dir: "output/merged_warm_llama3.1_USMLE"
+#export_dir: "output/merged_warm_llama3.1_mmlu_pro"
+#export_dir: "output/merged_warm_tinyllama1.1base_mmlu"
+#export_dir: "output/merged_warm_phi3mini4k_mmlu"
+#export_dir: "output/merged_warm_gemma2_2bit_mmlu"
+export_dir: "output/merged_warm_gemma2_2b_mmlu"
+
+
+export_size: 2
+export_device: cpu
+export_legacy_format: false
