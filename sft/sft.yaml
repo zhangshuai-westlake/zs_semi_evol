@@ -2,9 +2,10 @@
 #model_name_or_path: "output/merged_warm_llama3.1_mmlu"
 #model_name_or_path: "output/merged_warm_llama3.1_USMLE"
 #model_name_or_path: "output/merged_warm_llama3.1_mmlu_pro"
+model_name_or_path: "output/merged_warm_llama3.1_mix"
 #model_name_or_path: "output/merged_warm_tinyllama1.1base_mmlu"
 #model_name_or_path: "output/merged_warm_phi3mini4k_mmlu"
-model_name_or_path: "output/merged_warm_gemma2_2b_mmlu"
+#model_name_or_path: "output/merged_warm_gemma2_2b_mmlu"
 trust_remote_code: true
 
 ### method
@@ -21,6 +22,7 @@ lora_dropout: 0.1
 #dataset: "pseudo_warm_llama3.1_mmlu_filter"
 #dataset: "pseudo_warm_llama3.1_USMLE_filter"
 #dataset: "pseudo_warm_llama3.1_mmluupro_filter"
+dataset: "pseudo_warm_llama3.1_mix_filter"
 #dataset: "pseudo_warm_tinyllama1.1base_mmlu_filter"
 #dataset: "pseudo_warm_phi3mini4k_mmlu_filter"
 #dataset: "pseudo_warm_gemma_2b_mmlu_filter"
@@ -32,16 +34,16 @@ lora_dropout: 0.1
 #dataset: "pseudo_warm_llama3.1_mmlu_filter_threshold_by_filter_proportion"
 #dataset: "pseudo_warm_llama3.1_mmlu_pro_filter_threshold_by_filter_proportion"
 #dataset: "pseudo_warm_phi3mini4k_mmlu_filter_threshold_by_filter_proportion"
-dataset: "pseudo_warm_gemma2_2b_mmlu_filter_threshold_by_filter_proportion"
+#dataset: "pseudo_warm_gemma2_2b_mmlu_filter_threshold_by_filter_proportion"
 
 ## llama3.1
-#template: llama3
+template: llama3
 ## tinyllama1.1
 #template: alpaca
 ## phi3mini4k
 #template: phi
 ## gemma
-template: gemma
+#template: gemma
 
 cutoff_len: 2048
 overwrite_cache: true
@@ -52,6 +54,7 @@ preprocessing_num_workers: 16
 #output_dir: "output/pseudo_llama3.1_mmlu_filter"
 #output_dir: "output/pseudo_llama3.1_USMLE_filter"
 #output_dir: "output/pseudo_llama3.1_mmlu_pro_filter"
+output_dir: "output/pseudo_llama3.1_mix_filter"
 #output_dir: "output/pseudo_tinyllama1.1base_mmlu_filter"
 #output_dir: "output/pseudo_phi3mini4k_mmlu_filter"
 #output_dir: "output/pseudo_gemma2_2b_mmlu_filter"
@@ -63,7 +66,7 @@ preprocessing_num_workers: 16
 #output_dir: "output/pseudo_llama3.1_mmlu_filter_threshold_by_filter_proportion"
 #output_dir: "output/pseudo_llama3.1_mmlu_pro_filter_threshold_by_filter_proportion"
 #output_dir: "output/pseudo_phi3mini4k_mmlu_filter_threshold_by_filter_proportion"
-output_dir: "output/pseudo_gemma2_2b_mmlu_filter_threshold_by_filter_proportion"
+#output_dir: "output/pseudo_gemma2_2b_mmlu_filter_threshold_by_filter_proportion"
 logging_steps: 10
 save_steps: 500
 plot_loss: true

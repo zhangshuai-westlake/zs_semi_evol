@@ -1,0 +1,356 @@
+question_id,question,options,answer,answer_index,cot_content,category,src,label,option_description
+9993,Which of the following was not cited as evidence for life in the martian meteorite ALH84001?,"['Amino acids with a preferred orientation or ""chirality""'
+ 'Magnetite grains similar to those formed by bacteria on Earth'
+ 'Methane traces within the meteorite'
+ 'High levels of sulfur, indicating a possible volcanic origin'
+ 'Detection of radio signals from the meteorite'
+ 'Carbonate minerals indicating a thicker warmer Martian atmosphere'
+ 'Presence of water-ice in the meteorite'
+ 'Presence of olivine, a common mineral in Martian meteorites'
+ 'Fossilized microbial life forms within the meteorite'
+ 'Complex organic molecules specifically PAHs']",Answer: A,0,,physics,ori_mmlu-astronomy,A,"A:Amino acids with a preferred orientation or ""chirality""
+B:Magnetite grains similar to those formed by bacteria on Earth
+C:Methane traces within the meteorite
+D:High levels of sulfur, indicating a possible volcanic origin
+E:Detection of radio signals from the meteorite
+F:Carbonate minerals indicating a thicker warmer Martian atmosphere
+G:Presence of water-ice in the meteorite
+H:Presence of olivine, a common mineral in Martian meteorites
+I:Fossilized microbial life forms within the meteorite
+J:Complex organic molecules specifically PAHs"
+6273,"Which one of following statements about nitrogen balance is correct?
+","['Positive nitrogen balance means that there is a net loss of protein from the body'
+ 'Positive nitrogen balance means that the body is in a state of nitrogen deficiency.'
+ 'In negative nitrogen balance the excretion of nitrogenous metabolites is less than the dietary intake of nitrogenous compounds'
+ 'Negative nitrogen balance indicates a net gain of protein in the body.'
+ 'In positive nitrogen balance the excretion of nitrogenous metabolites is less than the dietary intake of nitrogenous compounds.'
+ 'Positive nitrogen balance means that the body excretes more nitrogenous compounds than it consumes.'
+ 'In nitrogen equilibrium the excretion of nitrogenous metabolites is greater than the dietary intake of nitrogenous compounds.'
+ 'In positive nitrogen balance the excretion of nitrogenous metabolites is equal to the dietary intake of nitrogenous compounds.']",Answer: E,4,,health,ori_mmlu-nutrition,E,"A:Positive nitrogen balance means that there is a net loss of protein from the body
+B:Positive nitrogen balance means that the body is in a state of nitrogen deficiency.
+C:In negative nitrogen balance the excretion of nitrogenous metabolites is less than the dietary intake of nitrogenous compounds
+D:Negative nitrogen balance indicates a net gain of protein in the body.
+E:In positive nitrogen balance the excretion of nitrogenous metabolites is less than the dietary intake of nitrogenous compounds.
+F:Positive nitrogen balance means that the body excretes more nitrogenous compounds than it consumes.
+G:In nitrogen equilibrium the excretion of nitrogenous metabolites is greater than the dietary intake of nitrogenous compounds.
+H:In positive nitrogen balance the excretion of nitrogenous metabolites is equal to the dietary intake of nitrogenous compounds."
+8064,For the two linear equations $2 * x + 3 * y = 10$ and $4 * x + 4 * y = 12$ iwth variables x and y. Use cramer's rule to solve these two variables.,"['[4, 1]' '[-1, 4]' '[2, 2]' '[3, 2]' '[1, 2]' '[0, 3]' '[-2, 6]' '[1, 5]'
+ '[2, 3]' '[5, -1]']",Answer: B,1,,math,theoremQA-Math,B,"A:[4, 1]
+B:[-1, 4]
+C:[2, 2]
+D:[3, 2]
+E:[1, 2]
+F:[0, 3]
+G:[-2, 6]
+H:[1, 5]
+I:[2, 3]
+J:[5, -1]"
+4918,"This question refers to the following information.
+An Act to place certain restrictions on Immigration and to provide for the removal from the Commonwealth of Prohibited Immigrants.
+…
+3. The immigration into the Commonwealth of the persons described in any of the following paragraphs in this section (hereinafter called ""prohibited immigrants"") is prohibited, namely
+(a) Any person who when asked to do so by an officer fails to write out at dictation and sign in the presence of the officer a passage of fifty words in length in a European language directed by the officer;
+(b) Any person in the opinion of the Minister or of an officer to become a charge upon the public or upon any public or charitable organisation;
+…
+(g) Any persons under a contract or agreement to perform manual labour within the Commonwealth: Provided that this paragraph shall not apply to workmen exempted by the Minister for special skill required by Australia…
+Immigration Restriction Act of 1901 (Australia)
+Whereas in the opinion of the Government of the United States the coming of Chinese laborers to this country endangers the good order of certain localities within the territory thereof;
+Therefore,
+Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, That from and after the expiration of ninety days next after the passage of this act, the coming of Chinese laborers to the United States be suspended; and during such suspension it shall not be lawful for any Chinese laborer to come, or having so come after the expiration of said ninety days to remain within the United States.
+SEC. 2. That the master of every vessel who shall knowingly bring within the United States on such vessel, and land or permit to be landed, any Chinese laborer, from any foreign port or place, shall be deemed guilty of a misdemeanor, and on conviction thereof shall be punished by a fine of not more than five hundred dollars for each and every such Chinese laborer so brought, and may be also imprisoned for a term not exceeding one year….
+Chinese Exclusion Act of 1882 (United States)
+Which of the following economic activities did the most to drive the rising levels of immigration that led to the enactment of the law described in the second passage?","['Iron smelting' 'Fertilizer harvesting' 'Coal mining' 'Fur trading'
+ 'Cotton farming' 'Tobacco cultivation' 'Silk production'
+ 'Sugarcane production' 'Railroad construction' 'Gold mining']",Answer: I,8,,history,ori_mmlu-high_school_world_history,I,"A:Iron smelting
+B:Fertilizer harvesting
+C:Coal mining
+D:Fur trading
+E:Cotton farming
+F:Tobacco cultivation
+G:Silk production
+H:Sugarcane production
+I:Railroad construction
+J:Gold mining"
+6963,Which of the following is a consequence of removal of a protective tariff on imported steel?,"['The quality of imported steel decreases.'
+ 'Domestic steel producers lose their job.'
+ 'Income is transferred from domestic steel consumers to foreign steel producers.'
+ 'Income is transferred from steel consumers to domestic steel producers.'
+ 'Allocative efficiency is improved.' 'Imports fall.'
+ 'The price of imported steel increases.'
+ 'Income is transferred from foreign steel producers to domestic steel producers.'
+ 'The supply of domestic steel decreases.'
+ 'The demand for domestic steel increases.']",Answer: E,4,,economics,ori_mmlu-high_school_macroeconomics,E,"A:The quality of imported steel decreases.
+B:Domestic steel producers lose their job.
+C:Income is transferred from domestic steel consumers to foreign steel producers.
+D:Income is transferred from steel consumers to domestic steel producers.
+E:Allocative efficiency is improved.
+F:Imports fall.
+G:The price of imported steel increases.
+H:Income is transferred from foreign steel producers to domestic steel producers.
+I:The supply of domestic steel decreases.
+J:The demand for domestic steel increases."
+7871,suppose $-\pi<x<\pi$. what is the value of $(\sum_{n=1}^{\infty}(-1)^{n-1} \frac{cos(nx)}{n})/log(2cos(x/2))$? Rounding it to the hundredths place and return the value.,['-1.0' '2.5' '1.5' '2.0' '0.25' '3.0' '-0.5' '1.0' '0.5' '0.75'],Answer: H,7,,math,theoremQA-Math,H,"A:-1.0
+B:2.5
+C:1.5
+D:2.0
+E:0.25
+F:3.0
+G:-0.5
+H:1.0
+I:0.5
+J:0.75"
+11518,A marine research facility uses a towing basin to test models of proposed ship hull configurations. A new hull shape utilizing a bulbous underwater bow is proposed for a nuclear- powered aircraft carrier that is to be 300 m long. A 3-m model has been tested in the towing tank and found to have a maximum practical hull speed of 1.4 m/s. What is the anticipated hull speed for the prototype?,"['18 m/s' '20 m/s' '12 m/s' '14 m/s' '10 m/s' '25 m/s' '30 m/s' '1.4 m/s'
+ '7 m/s' '8.5 m/s']",Answer: D,3,,engineering,stemez-FluidMechanics,D,"A:18 m/s
+B:20 m/s
+C:12 m/s
+D:14 m/s
+E:10 m/s
+F:25 m/s
+G:30 m/s
+H:1.4 m/s
+I:7 m/s
+J:8.5 m/s"
+12253,"The cost of making the correct decisions for the given binary channel is zero, i.e., c(d_1/x_1) = c(d_2/x_2) = 0. The cost of making the incorrect decision d_1 is twice as much as that of making the incorrect decision d_2. That is to say, c(d_1/x_2) = 2c(d_2/x_1) which decision should be made, first, (a) When a y_1 is received, and (b) When a y_2 is received? GivenP(y_1/x_1) = 0.8, P(y_2/x_2) = 0.6, andP(x_1) = 0.8","['(a) Decision made is d_1, (b) Decision d_1'
+ '(a) Decision made is d_2, (b) Decision d_2'
+ '(a) Decision made is random, (b) No decision is made'
+ '(a) Decision made is d_2, (b) Decision d_1'
+ '(a) Decision made is d_1, (b) No decision is made'
+ '(a) No decision is made, (b) Decision made is d_2'
+ '(a) No decision is made, (b) Decision made is d_1'
+ '(a) Decision made is d_1, (b) Decision d_2'
+ '(a) Decision made is random between d_1 and d_2, (b) Decision d_1'
+ '(a) Decision made is d_2, (b) Decision is random between d_1 and d_2']",Answer: H,7,,engineering,stemez-ElectronicCommunications,H,"A:(a) Decision made is d_1, (b) Decision d_1
+B:(a) Decision made is d_2, (b) Decision d_2
+C:(a) Decision made is random, (b) No decision is made
+D:(a) Decision made is d_2, (b) Decision d_1
+E:(a) Decision made is d_1, (b) No decision is made
+F:(a) No decision is made, (b) Decision made is d_2
+G:(a) No decision is made, (b) Decision made is d_1
+H:(a) Decision made is d_1, (b) Decision d_2
+I:(a) Decision made is random between d_1 and d_2, (b) Decision d_1
+J:(a) Decision made is d_2, (b) Decision is random between d_1 and d_2"
+358,"Ringlet Wholesalers discounted its old line of dining-room sets at a chain discount of 30% and 10%. If the discount offered was $248.40, what was the list price and the net price of each set?","['List price: $560.57, Net price: $392.40'
+ 'List price: $992.00, Net price: $671.35'
+ 'List price: $671.35, Net price: $248.40'
+ 'List price: $248.40, Net price: $422.95'
+ 'List price: $354.86, Net price: $248.40'
+ 'List price: $671.35, Net price: $422.95'
+ 'List price: $775.50, Net price: $542.85'
+ 'List price: $422.95, Net price: $671.35'
+ 'List price: $994.85, Net price: $696.39'
+ 'List price: $865.20, Net price: $605.64']",Answer: F,5,,business,stemez-Business,F,"A:List price: $560.57, Net price: $392.40
+B:List price: $992.00, Net price: $671.35
+C:List price: $671.35, Net price: $248.40
+D:List price: $248.40, Net price: $422.95
+E:List price: $354.86, Net price: $248.40
+F:List price: $671.35, Net price: $422.95
+G:List price: $775.50, Net price: $542.85
+H:List price: $422.95, Net price: $671.35
+I:List price: $994.85, Net price: $696.39
+J:List price: $865.20, Net price: $605.64"
+6909,"Under which of the following situations would bootstrapping be preferred to pure simulation?
+
+i) If it is desired that the distributional properties of the data in the experiment
+
+are the same as those of some actual data
+
+
+ii) If it is desired that the distributional properties of the data in the experiment
+
+are known exactly
+
+
+iii) If the distributional properties of the actual data are unknown
+
+
+iv) If the sample of actual data available is very small","['(i) and (ii) only' '(ii) and (iii) only' '(i) and (iii) only'
+ '(i) and (iv) only' '(ii) and (iv) only' '(iii) and (iv) only'
+ '(i), (ii), (iii), and (iv)' '(i), (iii), and (iv) only'
+ '(ii), (iii), and (iv) only' '(i), (ii), and (iv) only']",Answer: C,2,,economics,ori_mmlu-econometrics,C,"A:(i) and (ii) only
+B:(ii) and (iii) only
+C:(i) and (iii) only
+D:(i) and (iv) only
+E:(ii) and (iv) only
+F:(iii) and (iv) only
+G:(i), (ii), (iii), and (iv)
+H:(i), (iii), and (iv) only
+I:(ii), (iii), and (iv) only
+J:(i), (ii), and (iv) only"
+7050,Scarcity is best defined as,"['the opportunity cost of not pursuing a given course of action.'
+ 'the difference between unlimited wants and limited economic resources.'
+ 'the difference between unlimited resources and unlimited economic wants.'
+ 'the opportunity cost of pursuing a given course of action.'
+ 'the difference between the total benefit of an action and the total cost of that action.'
+ 'the difference between limited wants and unlimited economic resources.'
+ 'the total benefit of all economic actions.'
+ 'the difference between limited wants and limited economic resources.'
+ 'the total sum of resources available in an economy.'
+ 'the total cost of all economic actions.']",Answer: B,1,,economics,ori_mmlu-high_school_microeconomics,B,"A:the opportunity cost of not pursuing a given course of action.
+B:the difference between unlimited wants and limited economic resources.
+C:the difference between unlimited resources and unlimited economic wants.
+D:the opportunity cost of pursuing a given course of action.
+E:the difference between the total benefit of an action and the total cost of that action.
+F:the difference between limited wants and unlimited economic resources.
+G:the total benefit of all economic actions.
+H:the difference between limited wants and limited economic resources.
+I:the total sum of resources available in an economy.
+J:the total cost of all economic actions."
+10176,Compute the mean translational kinetic energy of a single ideal gas molecule in eV.,['0.005' '0.58' '1.5' '0.038' '1.20' '0.12' '0.95' '2.5' '0.025' '0.75'],Answer: D,3,,physics,theoremQA-Physics,D,"A:0.005
+B:0.58
+C:1.5
+D:0.038
+E:1.20
+F:0.12
+G:0.95
+H:2.5
+I:0.025
+J:0.75"
+495,Although corporate profit maximization is not directly prescribed by major normative theories to which normative theory is it most similar?,"['ethics of care' 'preference utilitarianism' 'Egoism' 'Deontology'
+ 'Relativism' 'The Categorical Imperative' 'Virtue ethics'
+ 'Contractarianism' 'hedonistic utilitarianism' 'Consequentialism']",Answer: B,1,,business,ori_mmlu-business_ethics,B,"A:ethics of care
+B:preference utilitarianism
+C:Egoism
+D:Deontology
+E:Relativism
+F:The Categorical Imperative
+G:Virtue ethics
+H:Contractarianism
+I:hedonistic utilitarianism
+J:Consequentialism"
+2165,"According to Erikson, a young adult's developmental crisis centers around","['autonomy vs. shame and guilt' 'integrity vs. despair'
+ 'identity vs. role confusion' 'empathy vs. apathy' 'initiative vs. guilt'
+ 'generativity vs. stagnation' 'intimacy vs. isolation'
+ 'trust vs. mistrust' 'independence vs. dependence'
+ 'industry vs. inferiority']",Answer: G,6,,psychology,ori_mmlu-high_school_psychology,G,"A:autonomy vs. shame and guilt
+B:integrity vs. despair
+C:identity vs. role confusion
+D:empathy vs. apathy
+E:initiative vs. guilt
+F:generativity vs. stagnation
+G:intimacy vs. isolation
+H:trust vs. mistrust
+I:independence vs. dependence
+J:industry vs. inferiority"
+4808,"This question refers to the following information.
+I walk alongside the column, ask what's going on.
+A soldier says simply: ""They call up more every day.
+""Some of us were sent north to the Yellow River at age fifteen,
+And now at forty we're heading off to the garrisons in the west.
+On our first tour, the village headman had to tie our bandannas for us.
+When we came back, our hair was white, but still there's more unrest.
+The frontier garrisons run with blood, enough to fill an ocean,
+But the Martial Emperor's territorial ambitions have yet to crest.
+In the hundred districts east of the mountains, throughout the land of Han,
+There must be ten thousand villages that brambles now infest.
+Even if wives are strong enough to handle a hoe and plow,
+The crops grow every which way, the fields are all a mess.
+It's hardest for the Shanxi men, with their reputations as fighters:
+They're rounded up like dogs or chickens, every male impressed.
+""But sir, though it's good of you to ask,
+Complaining isn't part of the soldier's task.
+We can only shake our heads. Take this winter:
+The Shanxi troops were never sent home.
+The District Officers are demanding the land tax,
+But where will it come from? You can't get blood from a stone!
+I honestly think it's bad luck to bear a son now,
+It's better to have a daughter: at least she can marry
+And live with the neighbors next door.
+But a son will end up lying on some distant prairie.""
+Du Fu, ""Ballad of the Army Carts,"" ca. 750 C.E.
+The poem provides evidence of which of the following with respect to gender relations in Tang society?","['Women in Tang society had limited roles outside of the home.'
+ 'Imperial rescripts emphasized the birth of able sons over daughters to fulfill conscription quotas.'
+ 'Agricultural work could be shared by women and men alike.'
+ 'Women were encouraged to become soldiers to fill the conscription quotas.'
+ 'Traditional Chinese gender relations were reversed during the reign of Empress Wu Zetian.'
+ 'The birth of a daughter was seen as a misfortune in Tang society.'
+ 'Men were predominantly responsible for the household while women worked in the fields.'
+ 'Confucian relationships between husband and wife were still strong in Tang society.']",Answer: C,2,,history,ori_mmlu-high_school_world_history,C,"A:Women in Tang society had limited roles outside of the home.
+B:Imperial rescripts emphasized the birth of able sons over daughters to fulfill conscription quotas.
+C:Agricultural work could be shared by women and men alike.
+D:Women were encouraged to become soldiers to fill the conscription quotas.
+E:Traditional Chinese gender relations were reversed during the reign of Empress Wu Zetian.
+F:The birth of a daughter was seen as a misfortune in Tang society.
+G:Men were predominantly responsible for the household while women worked in the fields.
+H:Confucian relationships between husband and wife were still strong in Tang society."
+11336,"A bevel gear is keyed to a steel shaft by a steel feather key. The gear delivers a torque of 7500 in.-lb. and the shaft has a 2 in. diameter. Compute the key length if: (a) The key has thickness = (1/2) in. and width = (3/4) in (b) The key has thickness = (3/4) in. and width = (1/2) in Assume permissible stress values in compression and tension of 16,500 psi and in shear of 8500 psi, for the key material.","['(a) 1.5 in, (b) 1 (1/2) in' '(a) 2.25 in, (b) 1.25 in'
+ '(a) 1.75 in, (b) 2.25 in' '(a) 2.0 in, (b) 1 (3/4) in'
+ '(a) 2.5 in, (b) 2 in' '(a) 1.0 in, (b) 3.0 in' '(a) 3.5 in, (b) 2.0 in'
+ '(a) 2.75 in, (b) 1.75 in' '(a) 3.25 in, (b) 2.5 in'
+ '(a) 3.0 in, (b) 2 (1/4) in']",Answer: D,3,,engineering,stemez-MachineDesign,D,"A:(a) 1.5 in, (b) 1 (1/2) in
+B:(a) 2.25 in, (b) 1.25 in
+C:(a) 1.75 in, (b) 2.25 in
+D:(a) 2.0 in, (b) 1 (3/4) in
+E:(a) 2.5 in, (b) 2 in
+F:(a) 1.0 in, (b) 3.0 in
+G:(a) 3.5 in, (b) 2.0 in
+H:(a) 2.75 in, (b) 1.75 in
+I:(a) 3.25 in, (b) 2.5 in
+J:(a) 3.0 in, (b) 2 (1/4) in"
+5842,"To which of the following parties will a CPA be liable if the CPA fraudulently issues an unqualified opinion on a corporation's materially misstated financial statements? Corporate shareholders, Corporate bondholders","['No No'
+ 'To both parties, but only if the CPA had knowledge of the fraudulent activity'
+ 'Only to corporate bondholders if they can prove reliance on the misstated financial statements'
+ 'Yes Yes' 'No Yes'
+ 'To neither party, unless they can prove reliance and financial loss due to the misstated financial statements'
+ 'Yes No'
+ 'Only to corporate shareholders if they can prove reliance on the misstated financial statements'
+ 'To both parties, but only if the CPA had a direct contractual relationship with them'
+ 'To both parties, but only if they can prove financial loss due to the misstated financial statements']",Answer: D,3,,other,ori_mmlu-professional_accounting,D,"A:No No
+B:To both parties, but only if the CPA had knowledge of the fraudulent activity
+C:Only to corporate bondholders if they can prove reliance on the misstated financial statements
+D:Yes Yes
+E:No Yes
+F:To neither party, unless they can prove reliance and financial loss due to the misstated financial statements
+G:Yes No
+H:Only to corporate shareholders if they can prove reliance on the misstated financial statements
+I:To both parties, but only if the CPA had a direct contractual relationship with them
+J:To both parties, but only if they can prove financial loss due to the misstated financial statements"
+6420,The major concentrations of proprioceptive receptors providing information about position of the TMJ are located in,"['the articular disc of the TMJ and the lateral pterygoid muscle.'
+ 'the capsule and ligaments of the TMJ and the masseter muscle.'
+ 'the ligaments of the TMJ and the medial pterygoid muscle.'
+ 'the articular disc of the TMJ and the medial pterygoid muscle.'
+ 'the articular disc of the TMJ and the medial and lateral pterygoid muscles.'
+ 'the capsule, ligaments, and articular disc of the TMJ.'
+ 'the articular disc of the TMJ and the masseter muscle.'
+ 'the capsule and ligaments of the TMJ and the lateral pterygoid muscle.'
+ 'the capsule and ligaments of the TMJ and the medial pterygoid muscle.'
+ 'the capsule of the TMJ and the lateral pterygoid muscle.']",Answer: H,7,,health,ori_mmlu-anatomy,H,"A:the articular disc of the TMJ and the lateral pterygoid muscle.
+B:the capsule and ligaments of the TMJ and the masseter muscle.
+C:the ligaments of the TMJ and the medial pterygoid muscle.
+D:the articular disc of the TMJ and the medial pterygoid muscle.
+E:the articular disc of the TMJ and the medial and lateral pterygoid muscles.
+F:the capsule, ligaments, and articular disc of the TMJ.
+G:the articular disc of the TMJ and the masseter muscle.
+H:the capsule and ligaments of the TMJ and the lateral pterygoid muscle.
+I:the capsule and ligaments of the TMJ and the medial pterygoid muscle.
+J:the capsule of the TMJ and the lateral pterygoid muscle."
+11178,"According to Hume, morality is ultimately based on:","['cultural norms.' 'social agreements.' 'reason.' 'personal beliefs.'
+ 'individual experiences.' 'scientific facts.' 'God’s commands.'
+ 'self-interest.' 'sympathy.' 'emotional responses.']",Answer: I,8,,philosophy,ori_mmlu-philosophy,I,"A:cultural norms.
+B:social agreements.
+C:reason.
+D:personal beliefs.
+E:individual experiences.
+F:scientific facts.
+G:God’s commands.
+H:self-interest.
+I:sympathy.
+J:emotional responses."
+5084,"Over the past several decades, attitudes toward premarital sex have __________; attitudes toward extramarital sex have __________.","['become more permissive; remained constant'
+ 'remained constant; become less accepting'
+ 'remained constant; become more permissive'
+ 'become more more permissive; become less accepting'
+ 'become less permissive; become more accepting'
+ 'remained constant; remained constant'
+ 'become less permissive; remained constant'
+ 'become less accepting; become more permissive'
+ 'become more permissive; become more accepting'
+ 'become less accepting; become less accepting']",Answer: D,3,,other,ori_mmlu-human_sexuality,D,"A:become more permissive; remained constant
+B:remained constant; become less accepting
+C:remained constant; become more permissive
+D:become more more permissive; become less accepting
+E:become less permissive; become more accepting
+F:remained constant; remained constant
+G:become less permissive; remained constant
+H:become less accepting; become more permissive
+I:become more permissive; become more accepting
+J:become less accepting; become less accepting"

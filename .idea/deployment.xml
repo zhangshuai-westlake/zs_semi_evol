@@ -1,9 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" autoUpload="Always" serverName="zhangshuai@cg-13:22 password" remoteFilesAllowedToDisappearOnAutoupload="false" confirmBeforeUploading="false">
+  <component name="PublishConfigData" autoUpload="Always" serverName="zhangshuai@cg7:22 agent" remoteFilesAllowedToDisappearOnAutoupload="false" confirmBeforeUploading="false">
     <option name="confirmBeforeUploading" value="false" />
     <serverData>
       <paths name="zhangshuai@cg-13:22 password">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/storage/home/westlakeLab/zhangshuai/work/semi_instruction_tuning/SemiEvol" local="$PROJECT_DIR$" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="zhangshuai@cg5:22 password (2)">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/storage/home/westlakeLab/zhangshuai/work/semi_instruction_tuning/SemiEvol" local="$PROJECT_DIR$" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="zhangshuai@cg7:22 agent">
         <serverdata>
           <mappings>
             <mapping deploy="/storage/home/westlakeLab/zhangshuai/work/semi_instruction_tuning/SemiEvol" local="$PROJECT_DIR$" />

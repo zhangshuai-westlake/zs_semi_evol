@@ -59,6 +59,11 @@ MODELS_CONFIG = {
         "url": "http://localhost:6006/v1",
         "method": "loop"
     },
+    "warm_llama3.1_mix": {
+        "name": "./sft/output/merged_warm_llama3.1_mix",
+        "url": "http://localhost:6006/v1",
+        "method": "loop"
+    },
     #tinyllama1.1base
     "warm_tinyllama1.1base_mmlu": {
         "name": "./sft/output/merged_warm_tinyllama1.1base_mmlu",
@@ -98,6 +103,11 @@ MODELS_CONFIG = {
     },
     "pseudo_llama3.1_mmlu_pro": {
         "name": "./sft/output/merged_pseudo_llama3.1_mmlu_pro_filter",
+        "url": "http://localhost:6006/v1",
+        "method": "loop"
+    },
+    "pseudo_llama3.1_mix": {
+        "name": "./sft/output/merged_pseudo_llama3.1_mix_filter",
         "url": "http://localhost:6006/v1",
         "method": "loop"
     },

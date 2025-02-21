@@ -23,6 +23,14 @@
       "response": "output"
     }
   },
+  "pseudo_warm_llama3.1_mix_filter": {
+    "file_name": "pseudo_warm_llama3.1_mix_alpaca.json",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
   "pseudo_warm_tinyllama1.1base_mmlu_filter": {
     "file_name": "pseudo_warm_tinyllama1.1base_mmlu_alpaca.json",
     "columns": {
@@ -123,6 +131,14 @@
   },
   "labeled_mmlu_pro": {
     "file_name": "mmlu_pro_labeled_alpaca.json",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "labeled_mix": {
+    "file_name": "mix_labeled_alpaca.json",
     "columns": {
       "prompt": "instruction",
       "query": "input",

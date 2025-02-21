@@ -1,11 +1,11 @@
 ### model
-#model_name_or_path: "/storage/home/westlakeLab/zhangshuai/models/Meta-Llama-3.1-8B-Instruct"
+model_name_or_path: "/storage/home/westlakeLab/zhangshuai/models/Meta-Llama-3.1-8B-Instruct"
 #model_name_or_path: "/storage/home/westlakeLab/zhangshuai/models/TinyLlama/TinyLlama_v1.1"
 #model_name_or_path: "/storage/home/westlakeLab/zhangshuai/models/TinyLlama/TinyLlama-1.1B-Chat-v1.0"
 #model_name_or_path: "/storage/home/westlakeLab/zhangshuai/models/TinyLlama/TinyLlama-1.1B-Chat-v1.0"
 #model_name_or_path: "/storage/home/westlakeLab/zhangshuai/models/microsoft/Phi-3-mini-4k-instruct"
 #model_name_or_path: "/storage/home/westlakeLab/zhangshuai/models/google/gemma-2-2b-it"
-model_name_or_path: "/storage/home/westlakeLab/zhangshuai/models/google/gemma-2-2b"
+#model_name_or_path: "/storage/home/westlakeLab/zhangshuai/models/google/gemma-2-2b"
 trust_remote_code: true
 
 ### method
@@ -18,19 +18,20 @@ lora_alpha: 16
 lora_dropout: 0.1
 
 ### dataset
-dataset: "labeled_mmlu"
+#dataset: "labeled_mmlu"
 #dataset: "labeled_USMLE"
 #dataset: "labeled_mmlu_pro"
+dataset: "labeled_mix"
 
 ### template
 ## llama3.1
-#template: llama3
+template: llama3
 ## tinyllama1.1
 #template: alpaca
 ## phi3mini4k
 #template: phi
 ## gemma2_2bit
-template: gemma
+#template: gemma
 
 
 cutoff_len: 2048
@@ -42,6 +43,7 @@ preprocessing_num_workers: 16
 #output_dir: "output/warm_llama3.1_mmlu"
 #output_dir: "output/warm_llama3.1_USMLE"
 #output_dir: "output/warm_llama3.1_mmlu_pro"
+output_dir: "output/warm_llama3.1_mix"
 ## tinyllama1.1
 #output_dir: "output/warm_tinyllama1.1base_mmlu"
 #output_dir: "output/warm_tinyllama1.1_mmlu"
@@ -49,7 +51,7 @@ preprocessing_num_workers: 16
 #output_dir: "output/warm_phi3mini4k_mmlu"
 ## gemma2_2bit
 #output_dir: "output/warm_gemma2_2bit_mmlu"
-output_dir: "output/warm_gemma2_2b_mmlu"
+#output_dir: "output/warm_gemma2_2b_mmlu"
 
 #logging_steps: 10
 logging_steps: 1

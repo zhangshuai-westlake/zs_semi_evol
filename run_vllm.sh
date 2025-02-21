@@ -4,13 +4,13 @@
 #model_path="/storage/home/westlakeLab/zhangshuai/models/google/gemma-2-2b"
 
 ### base instruction model
-#model_path="/storage/home/westlakeLab/zhangshuai/models/Meta-Llama-3.1-8B-Instruct"
+model_path="/storage/home/westlakeLab/zhangshuai/models/Meta-Llama-3.1-8B-Instruct"
 #model_path="/storage/home/westlakeLab/zhangshuai/models/TinyLlama/TinyLlama-1.1B-Chat-v1.0"
 #model_path="/storage/home/westlakeLab/zhangshuai/models/microsoft/Phi-3-mini-4k-instruct"
 #model_path="/storage/home/westlakeLab/zhangshuai/models/google/gemma-2-2b-it"
 
 
-task="mmlu"
+#task="mmlu"
 #task="USMLE"
 #task="mmlu_pro"
 
@@ -18,14 +18,16 @@ task="mmlu"
 #base_model="tinyllama1.1base"
 #base_model="phi3mini4k"
 #base_model="gemma2_2bit"
-base_model="gemma2_2b"
+#base_model="gemma2_2b"
 
 ### warm model
 #model_path="./sft/output/merged_warm_${base_model}_${task}"
+#model_path="./sft/output/merged_warm_${base_model}_mix"
 
 ########### semievol model
 ### baseline
-model_path="./sft/output/merged_pseudo_${base_model}_${task}_filter"
+#model_path="./sft/output/merged_pseudo_${base_model}_${task}_filter"
+#model_path="./sft/output/merged_pseudo_${base_model}_mix_filter"
 ### test
 #model_path="./sft/output/merged_pseudo_llama3.1_${task}_filter_test_pseudo"
 #model_path="./sft/output/merged_pseudo_llama3.1_${task}_filter_test_all_right"
@@ -39,10 +41,9 @@ model_path="./sft/output/merged_pseudo_${base_model}_${task}_filter"
 ### paper report model
 #model_path="/data/users/zhangshuai/work/pretrained_models/luojunyu/Llama-3.1-8B-SemiEvol-MMLU"
 
-export CUDA_VISIBLE_DEVICES=6
-
 vllm="/storage/home/westlakeLab/zhangshuai/anaconda3/envs/vllm/bin/vllm"
-$vllm serve $model_path --port 6006
+
+CUDA_VISIBLE_DEVICES=1 $vllm serve $model_path --port 6006
 
 #chat_template="chat_template/template_gemma-it.jinja"
-#$vllm serve $model_path --port 6006 --chat-template $chat_template
+#$vllm serve $model_path --port 6007 --chat-template $chat_template

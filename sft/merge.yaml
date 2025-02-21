@@ -4,20 +4,22 @@
 #model_name_or_path: "output/merged_warm_llama3.1_mmlu"
 #model_name_or_path: "output/merged_warm_llama3.1_USMLE"
 #model_name_or_path: "output/merged_warm_llama3.1_mmlu_pro"
+model_name_or_path: "output/merged_warm_llama3.1_mix"
 #model_name_or_path: "output/merged_warm_tinyllama1.1base_mmlu"
 #model_name_or_path: "output/merged_warm_phi3mini4k_mmlu"
 #model_name_or_path: "output/merged_warm_gemma2_2bit_mmlu"
-model_name_or_path: "output/merged_warm_gemma2_2b_mmlu"
+#model_name_or_path: "output/merged_warm_gemma2_2b_mmlu"
 
 ########### adapter
 ### baseline
 #adapter_name_or_path: "output/pseudo_llama3.1_mmlu_filter"
 #adapter_name_or_path: "output/pseudo_llama3.1_USMLE_filter"
 #adapter_name_or_path: "output/pseudo_llama3.1_mmlu_pro_filter"
+adapter_name_or_path: "output/pseudo_llama3.1_mix_filter"
 #adapter_name_or_path: "output/pseudo_tinyllama1.1base_mmlu_filter"
 #adapter_name_or_path: "output/pseudo_phi3mini4k_mmlu_filter"
 #adapter_name_or_path: "output/pseudo_gemma2_2bit_mmlu_filter"
-adapter_name_or_path: "output/pseudo_gemma2_2b_mmlu_filter"
+#adapter_name_or_path: "output/pseudo_gemma2_2b_mmlu_filter"
 ### use for test
 #adapter_name_or_path: "output/pseudo_llama3.1_mmlu_pro_filter_test_pseudo"
 #adapter_name_or_path: "output/pseudo_llama3.1_mmlu_pro_filter_test_all_right"
@@ -28,10 +30,10 @@ adapter_name_or_path: "output/pseudo_gemma2_2b_mmlu_filter"
 #adapter_name_or_path: "output/pseudo_phi3mini4k_mmlu_filter_threshold_by_filter_proportion"
 
 
-#template: llama3
+template: llama3
 #template: alpaca
 #template: phi
-template: gemma
+#template: gemma
 finetuning_type: lora
 trust_remote_code: true
 
@@ -40,9 +42,10 @@ trust_remote_code: true
 #export_dir: "output/merged_pseudo_llama3.1_mmlu_filter"
 #export_dir: "output/merged_pseudo_llama3.1_USMLE_filter"
 #export_dir: "output/merged_pseudo_llama3.1_mmlu_pro_filter"
+export_dir: "output/merged_pseudo_llama3.1_mix_filter"
 #export_dir: "output/merged_pseudo_tinyllama1.1base_mmlu_filter"
 #export_dir: "output/merged_pseudo_phi3mini4k_mmlu_filter"
-export_dir: "output/merged_pseudo_gemma2_2b_mmlu_filter"
+#export_dir: "output/merged_pseudo_gemma2_2b_mmlu_filter"
 ### use for test
 #export_dir: "output/merged_pseudo_llama3.1_mmlu_pro_filter_test_pseudo"
 #export_dir: "output/merged_pseudo_llama3.1_mmlu_pro_filter_test_all_right"

@@ -2,7 +2,7 @@
 <module type="PYTHON_MODULE" version="4">
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$" />
-    <orderEntry type="jdk" jdkName="Remote Python 3.12.2 (sftp://zhangshuai@cg25:22/storage/home/westlakeLab/zhangshuai/anaconda3/envs/semi_instruction_tuning/bin/python)" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Remote Python 3.12.2 (sftp://zhangshuai@cg7:22/storage/home/westlakeLab/zhangshuai/anaconda3/envs/semi_instruction_tuning/bin/python)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
 </module>
